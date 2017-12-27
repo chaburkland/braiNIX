@@ -1,0 +1,10 @@
+[
+    (subtract_space)
+    [
+        (add_space)
+        .
+        >
+        (subtract_space)
+    ]
+]
+(add_space)

@@ -1,0 +1,9 @@
+[
+    (subtract_space)
+    [
+        (add_space)
+        <<
+    ]
+    >
+]
+>

@@ -1,0 +1,10 @@
+[
+    (subtract_newline)
+    [
+        (add_newline)
+        .
+        >
+        (subtract_newline)
+    ]
+]
+(add_newline)
