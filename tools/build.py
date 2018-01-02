@@ -1,4 +1,4 @@
-"""Build ../src/brainix.bf, write to ../build/, and print specs."""
+"""Build ../src/brainix.bf, write to ../builds, and print specs."""
 
 
 import build_tools
@@ -13,5 +13,5 @@ build = build_tools.filter_commands(build)
 build = build_tools.reduce_commands(build)
 build_name = build_tools.report(build)
 
-with open(f"../build/{build_name}", 'w') as file:
+with open(f"../builds/{build_name}", 'w') as file:
     file.write(build)

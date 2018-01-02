@@ -16,9 +16,9 @@ clarity and consistency:
 - **Cells:** Individual memory addresses.
 
   - **Dividers:** Cells kept at `0`, used to separate structures (explained
-    below). When used with `to_previous_struct.bf`, `to_next_struct.bf`, or
-    similar files, it is possible to easily navigate huge amounts of memory
-    divided into structures of unknown size.
+    below). When used with `to_previous_struct_end.bf`,
+    `to_next_struct_start.bf`, or similar files, it is possible to easily
+    navigate huge amounts of memory divided into structures of unknown size.
 
   - **Anchors:** Cells kept at `-1`, or the maximum cell value, used to separate
     arbitrarily long groups of cells with values other than `-1`. When used with
@@ -37,12 +37,13 @@ clarity and consistency:
 
 During normal operation, braiNIX allocates memory according to this diagram:
 
-|**Address**|`#0`    |`#1` |...|`#(d + 2)`|`#(d + 3)`|...|`#(m - 1)`|
-|:---------:|:------:|:---:|:-:|:--------:|:--------:|:-:|:--------:|
-|**Type**   |Divider |Disk |...|Anchor    |RAM       |...|Divider   |
+|**Address**|`#0`    |`#1` |...|`#(d + 1)`|`#(d + 2)`|`#(d + 3)`|...|`#(m - 1)`|
+|:---------:|:------:|:---:|:-:|:--------:|:--------:|:--------:|:-:|:--------:|
+|**Type**   |Divider |Disk |...|Divider   |Anchor    |RAM       |...|Divider   |
 
 Here, `d` is the total size of `data` (in cells), and `m` is the total size of
-the system's memory (in cells).
+the system's memory (in cells). The disk cells (`#1` through `#d`) are only used
+if `data` exists.
 
 [the syntax and behavior of `.bf` files]:
 https://en.wikipedia.org/wiki/brainfuck

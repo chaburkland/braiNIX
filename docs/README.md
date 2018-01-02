@@ -90,7 +90,7 @@ Given a version number `vA.B.C+X.Y.Z`:
 
 _Want to help write braiNIX? Fork it for an interesting side-project, then open
 a pull request! Help with tooling, tests, and documentation is also greatly
-appreciated._
+appreciated. Check out the [contributing guide] for more info._
 
 [stable version]:
 https://img.shields.io/github/release/brandtbucher/brainix.svg?style=for-the-badge&label=stable
@@ -109,3 +109,6 @@ https://en.wikipedia.org/wiki/brainfuck
 
 [Semantic Versioning]:
 https://semver.org
+
+[contributing guide]:
+../docs/CONTRIBUTING.md

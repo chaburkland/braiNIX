@@ -1,5 +1,5 @@
 [
     (print_word)
-    (clear_struct)
+    (clear_struct_back)
     ": command not found\n"
 ]

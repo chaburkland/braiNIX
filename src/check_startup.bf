@@ -1,5 +1,5 @@
 [
     "STARTUP ERROR!\n"
     +
-    (clear_struct)
+    (clear_struct_back)
 ]

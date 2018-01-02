@@ -1,7 +1,6 @@
 (check_startup)
 >
 (to_next_struct_start)
-(clear_cell)
--
+(drop_anchor)
 >
 (reset)
