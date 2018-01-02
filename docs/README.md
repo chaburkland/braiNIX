@@ -54,7 +54,7 @@ echoed to the output stream. Both input and output streams should support the
 use static cell values that persist after restart / program termination.
 
 - The initial cell address must be the same each time braiNIX is run. For memory
-management purposes, it is recommended that this be cell `0`.
+management purposes, it is recommended that this be cell `#0`.
 
 ### Compatibility And Size Requirements
 
@@ -64,27 +64,27 @@ of each version number indicates its memory requirements.
 Given a version number `vA.B.C+X.Y.Z`:
 
 - `A` is the major version number. It indicates backward-compatibility with
-other versions.
+  other versions.
 
 - `B` is the minor version number. It indicates forward-compatibility with
-other versions.
+  other versions.
 
 - `C` is the patch version number. It indicates forward- and
-backward-compatibility with other versions.
+  backward-compatibility with other versions.
 
 - `X` is the size of the final build in kilobytes, rounded up. The runtime
-environment must have at least this much program memory available to
-successfully boot braiNIX. This value assumes 8-bit characters as commands,
-so it is possible to significantly reduce this requirement by mapping the
-ASCII characters to words as small as 3 bits, if desired.
+  environment must have at least this much program memory available to
+  successfully boot braiNIX. This value assumes 8-bit characters as commands,
+  so it is possible to significantly reduce this requirement by mapping the
+  ASCII characters to words as small as 3 bits, if desired.
 
 - `Y` is the loop depth of the final build. The runtime environment must support
-at least this many nested loops to successfully boot braiNIX. More are usually
-required for error-free execution.
+  at least this many nested loops to successfully boot braiNIX. More are usually
+  required for error-free execution.
 
 - `Z` is the memory size of the final build. The runtime environment must have
-at least this many memory cells to successfully boot braiNIX. More are usually
-required for error-free execution.
+  at least this many memory cells to successfully boot braiNIX. More are usually
+  required for error-free execution.
 
 --------------------------------------------------------------------------------
 
@@ -105,7 +105,7 @@ https://img.shields.io/github/release/brandtbucher/brainix/all.svg?style=for-the
 https://img.shields.io/github/release-date-pre/brandtbucher/brainix.svg?style=for-the-badge&label=built
 
 [an esoteric Turing language]:
-https://en.wikipedia.org/wiki/Brainfuck
+https://en.wikipedia.org/wiki/brainfuck
 
 [Semantic Versioning]:
 https://semver.org
