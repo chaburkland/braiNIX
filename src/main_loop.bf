@@ -1,4 +1,5 @@
 [
+    >>>
     "root@braiNIX:/# "
     (read_line)
     (clear_spaces_back)
@@ -7,5 +8,4 @@
     (to_struct_start)
     (clear_spaces_forward)
     (process)
-    (reset)
 ]

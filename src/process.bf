@@ -1,5 +1,51 @@
 [
-    (print_word)
-    (clear_struct_back)
-    ": command not found\n"
+    >
+    (subtract_space)
+    [
+        (add_space)
+        <
+        [->+<]
+        >>
+        (subtract_space)
+    ]
+    <
+    (subtract_exit)
+
+    <
+    [-]
+    +
+    <
+    [-]
+    >>
+    [
+            "Command not found!\n"
+        <
+        -
+    ]
+    <
+    [
+        >
+            -
+            <
+            (to_previous_anchor)
+            >
+            +
+            (to_next_anchor)
+            +
+        <
+        -
+        <
+    ]
+    >>
 ]
+>>
+
+(to_previous_anchor)
+>
+[
+    -
+    <
+    +
+    >
+]
+<

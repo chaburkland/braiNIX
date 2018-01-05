@@ -2,5 +2,3 @@
 >
 (to_next_struct_start)
 (drop_anchor)
->
-(reset)
