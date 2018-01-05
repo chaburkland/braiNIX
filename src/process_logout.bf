@@ -1,0 +1,16 @@
+(preprocess)
+(subtract_logout)
+[
+    (add_logout)
+    <
+    -
+]
+<
+[
+    >
+    (command_logout)
+    <
+    -
+    <
+]
+>>

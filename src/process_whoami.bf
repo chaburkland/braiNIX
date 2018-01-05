@@ -1,0 +1,16 @@
+(preprocess)
+(subtract_whoami)
+[
+    (add_whoami)
+    <
+    -
+]
+<
+[
+    >
+    (command_whoami)
+    <
+    -
+    <
+]
+>>

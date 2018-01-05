@@ -9,3 +9,5 @@
     (clear_spaces_forward)
     (process)
 ]
+<
+(to_previous_struct_end)

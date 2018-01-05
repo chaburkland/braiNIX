@@ -1,45 +1,12 @@
 [
-    >
-    (subtract_space)
-    [
-        (add_space)
-        <
-        [->+<]
-        >>
-        (subtract_space)
-    ]
-    <
-    (subtract_exit)
-
-    <
-    [-]
-    +
-    <
-    [-]
-    >>
-    [
-            "Command not found!\n"
-        <
-        -
-    ]
-    <
-    [
-        >
-            -
-            <
-            (to_previous_anchor)
-            >
-            +
-            (to_next_anchor)
-            +
-        <
-        -
-        <
-    ]
-    >>
+    (get_opcode)
+    (process_pwd)
+    (process_whoami)
+    (process_logout)
+    (process_exit)
+    (command_not_found)
 ]
 >>
-
 (to_previous_anchor)
 >
 [

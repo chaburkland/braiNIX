@@ -1,0 +1,16 @@
+(preprocess)
+(subtract_pwd)
+[
+    (add_pwd)
+    <
+    -
+]
+<
+[
+    >
+    (command_pwd)
+    <
+    -
+    <
+]
+>>

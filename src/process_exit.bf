@@ -1,0 +1,16 @@
+(preprocess)
+(subtract_exit)
+[
+    (add_exit)
+    <
+    -
+]
+<
+[
+    >
+    (command_exit)
+    <
+    -
+    <
+]
+>>
