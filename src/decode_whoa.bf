@@ -1,0 +1,16 @@
++
+>
+(subtract_a)
+[
+    (add_a)
+    <
+    -
+]
+<
+[
+    -
+    >
+    (decode_whoam)
+    <
+]
+>

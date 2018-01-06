@@ -1,0 +1,16 @@
++
+>
+(subtract_t)
+[
+    (add_t)
+    <
+    -
+]
+<
+[
+    -
+    >
+    (decode_exit_command)
+    <
+]
+>

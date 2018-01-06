@@ -7,7 +7,9 @@
     (add_space)
     (to_struct_start)
     (clear_spaces_forward)
-    (process)
+    (commands)
+    (to_previous_anchor)
+    (check_exit)
 ]
 <
 (to_previous_struct_end)

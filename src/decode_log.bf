@@ -1,0 +1,16 @@
++
+>
+(subtract_g)
+[
+    (add_g)
+    <
+    -
+]
+<
+[
+    -
+    >
+    (decode_logo)
+    <
+]
+>

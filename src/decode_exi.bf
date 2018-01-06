@@ -1,0 +1,16 @@
++
+>
+(subtract_i)
+[
+    (add_i)
+    <
+    -
+]
+<
+[
+    -
+    >
+    (decode_exit)
+    <
+]
+>
