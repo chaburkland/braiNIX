@@ -3,9 +3,6 @@
     "root@braiNIX:/# "
     (read_line)
     (clear_next_cell)
-    <
-    (clear_spaces_back)
-    (clear_next_cell)
     (add/space)
     (clear_next_cell)
     <

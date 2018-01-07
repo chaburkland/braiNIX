@@ -106,12 +106,57 @@ to number the release. The resulting file will then be saved to `../builds/`.
 Writing A Command
 -----------------
 
-braiNIX has been designed to make adding new commands very simple. To create a
-new command `x` (replacing `x` with the command name, like `echo` or `emacs`):
+Writing a command is an easy way to contribute to braiNIX. While anyone can help
+contribute to system-level changes (file system, execution loop, command
+detection, etc.), these are usually highly coordinated, involve many moving
+parts, often affect all commands, and require a deeper knowledge of how braiNIX
+works at a command-by-command level. Cloning a UNIX command, on the other hand,
+is as simple as coding some specific behavior and running an integration script.
+
+With that said, system-level contributions are always welcome, as are
+contributions to documentation, tooling, or tests!
+
+### What To Know Before Coding
+
+#### How To Start
+
+The command script will begin execution at an unknown location in RAM on a
+zeroed cell, with all characters typed by the user following the command located
+immediately to the right. Additionally, one space will have been added to the
+end of this argument string (including any trailing spaces that are already
+present).
+
+Here is an example command entered by the user. Note the two spaces between `A`
+and `B`. There are no spaces after `C`.
+
+```bash
+mycommand A  B C     
+```
+
+This is what the tape would look like immediately upon execution of
+`command/mycommand.bf`. For simplicity, the initial tape head location will be
+called `#0`.
+
+|**Address**  |`#0`|`#1`|`#2`   |`#3`   |`#4`|`#5`   |`#6`|`#7`   |`#8`|...|
+|:-----------:|:--:|:--:|:-----:|:-----:|:--:|:-----:|:--:|:-----:|:--:|:-:|
+|**Value**    |`0` |`65`|`32`   |`32`   |`66`|`32`   |`67`|`32`   |`0` |...|
+|**Character**|    |A   |(space)|(space)|B   |(space)|C   |(space)|    |...|
+
+#### How To Finish
+
+The command script is responsible for the cleanup of all cells to its right, to
+avoid possible memory corruption. All commands must end on the exact cell they
+started on (anchors are useful for ensuring that this happens).
+
+### Adding A New Command To The Source Tree
+
+braiNIX has been designed to make integrating new commands very simple. To add a
+new command `x`, simply follow the steps below (replace `x` with the command
+name, like `echo` or `emacs`).
 
 1. Code the command in a file named `x.bf`, and place it in the `src/command/`
    directory. Make sure the command does not already exist (unless it is being
-   updated, of course).
+   updated, of course, in which case the following steps can be skipped).
 
 2. Navigate to the `tools/` directory and run `python new_command.py`.
 
@@ -143,7 +188,12 @@ unnecessary loops and address shifts add considerable overhead and complexity
 especially for the hardware-interpreting designs that braiNIX is specifically
 designed for.
 
-Consider these two ways of setting a zeroed cell to `127`:
+For example, if the value of a cell is known, use minus signs to clear it rather
+than `[-]`. The latter method adds to the loop complexity of the final build,
+and takes 2x or 3x more time overall, depending on how the interpreter handles
+loops.
+
+As another example, consider these two ways of setting a zeroed cell to `127`:
 
 ```bf
 Multiplication
@@ -199,9 +249,9 @@ Never reduce the potential user base just to make the code easier to write. The
 minimum requirements for braiNIX are defined by what's realistically possible,
 not by what interpreter designs are easy to ignore.
 
-Consider the example above. While a subtraction option (127 minus signs) is just
-as fast and complex as addition, it would make braiNIX incompatible with any
-interpreters that have cell sizes greater than 8 bits.
+Consider the example above. While a subtraction option (129 minus signs) is
+essentially as fast and complex as addition, it would make braiNIX incompatible
+with any interpreters that have cell sizes greater than 8 bits.
 
 #### 4. Maintainability
 
@@ -215,18 +265,12 @@ need to be changed.
 
 #### 5. Stability
 
+Keep braiNIX robust. For example, never assume that new cells are already
+cleared to `0`, or that the user has provided valid input.
+
 Design it to work well, and keep it working well. It's as simple as that.
 
 ### Style
-
-#### Code
-
-All tooling should be written in Python 3.6, for consistency. It should follow
-the generally accepted standards found in:
-
-- [PEP 8]
-- [PEP 257]
-- [The Google Python Style Guide]
 
 All `.bf` source files should adhere to the following conventions:
 
@@ -235,7 +279,12 @@ All `.bf` source files should adhere to the following conventions:
 - Separate strings of identical commands on their own line.
 - Leave one-command loops intact, together on their own line.
 
-#### Documentation
+All tooling should be written in Python 3.6, for consistency. It should follow
+the generally accepted standards found in:
+
+- [PEP 8]
+- [PEP 257]
+- [The Google Python Style Guide]
 
 All documentation should be written in Markdown, for consistency. It should
 adhere to the following conventions:
@@ -244,10 +293,10 @@ adhere to the following conventions:
 - All links and images should be reference-style.
 - Any code, directories, files, file extensions, cell addresses, cell values, or
   variables should be `code-highlighted`.
-- Use underlining for level-two and level-two headings.
+- Use underlining for level-one and level-two headings.
 - All file references should be relative.
 - Indent properly when wrapping lines for lists.
-- Always write in the third person, passive voice.
+- Always write in the third person passive voice.
 
 [the syntax and behavior of `.bf` files]:
 https://en.wikipedia.org/wiki/brainfuck

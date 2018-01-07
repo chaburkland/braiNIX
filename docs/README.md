@@ -26,7 +26,7 @@ A file system is currently under development.
 ### Other Features
 
 No other features (arguments, options, quoting, substitution, redirection,
-chaining, etc...) are supported at this time.
+chaining, comments, etc...) are supported at this time.
 
 
 Requirements
