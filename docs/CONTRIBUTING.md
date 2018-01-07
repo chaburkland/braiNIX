@@ -143,7 +143,7 @@ unnecessary loops and address shifts add considerable overhead and complexity
 especially for the hardware-interpreting designs that braiNIX is specifically
 designed for.
 
-Consider setting a zeroed cell to `127`:
+Consider these two ways of setting a zeroed cell to `127`:
 
 ```bf
 Multiplication
@@ -169,13 +169,11 @@ Multiplication
 ]
 >
 
-Total operations: 342 (stack-based looping) or 676 (parsed looping)
+Total operations: 342 (stacked looping) or 676 (parsed looping)
 Nested loops: 2
 Total size: 24
 Cells used: 5
 ```
-
-versus
 
 ```bf
 Addition
@@ -210,6 +208,11 @@ interpreters that have cell sizes greater than 8 bits.
 Again, consider the speed comparison above. The addition is much easier to
 understand, debug, modify, integrate, and optimize than the multiplication.
 
+This also means substituting other source files wherever it's realistic to do
+so. In the future, it is much easier to modify one script to accommodate system
+design changes than it is to look everywhere for small groups of commands that
+need to be changed.
+
 #### 5. Stability
 
 Design it to work well, and keep it working well. It's as simple as that.
@@ -241,8 +244,8 @@ adhere to the following conventions:
 - All links and images should be reference-style.
 - Any code, directories, files, file extensions, cell addresses, cell values, or
   variables should be `code-highlighted`.
-- Use underlining for level-two and level-two headings. All file references
-  should be relative.
+- Use underlining for level-two and level-two headings.
+- All file references should be relative.
 - Indent properly when wrapping lines for lists.
 - Always write in the third person, passive voice.
 
