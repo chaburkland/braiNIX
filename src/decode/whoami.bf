@@ -1,0 +1,16 @@
++
+>
+(subtract/i)
+[
+    (add/i)
+    <
+    -
+]
+<
+[
+    -
+    >
+    (decode/whoami_command)
+    <
+]
+>

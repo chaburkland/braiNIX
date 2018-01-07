@@ -1,0 +1,17 @@
++
+>
+(subtract/space)
+[
+    (add/space)
+    <
+    -
+]
+<
+[
+    -
+    >
+    (command/whoami)
+    (clear_cell_down)
+    <
+]
+>

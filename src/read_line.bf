@@ -1,9 +1,9 @@
 (read_char)
-(subtract_newline)
+(subtract/newline)
 [
-    (add_newline)
+    (add/newline)
     >
     (read_char)
-    (subtract_newline)
+    (subtract/newline)
 ]
 <

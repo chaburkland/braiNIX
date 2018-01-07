@@ -1,0 +1,16 @@
++
+>
+(subtract/r)
+[
+    (add/r)
+    <
+    -
+]
+<
+[
+    -
+    >
+    (decode/clear_command)
+    <
+]
+>

@@ -1,0 +1,16 @@
++
+>
+(subtract/o)
+[
+    (add/o)
+    <
+    -
+]
+<
+[
+    -
+    >
+    (decode/whoa)
+    <
+]
+>

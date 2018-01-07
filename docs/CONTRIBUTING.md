@@ -109,7 +109,7 @@ Writing A Command
 braiNIX has been designed to make adding new commands very simple. To create a
 new command `x` (replacing `x` with the command name, like `echo` or `emacs`):
 
-1. Code the command in a file named `command_x.bf`, and place it in the `src/`
+1. Code the command in a file named `x.bf`, and place it in the `src/command/`
    directory. Make sure the command does not already exist (unless it is being
    updated, of course).
 
@@ -119,7 +119,7 @@ new command `x` (replacing `x` with the command name, like `echo` or `emacs`):
 
 That's it! The new command is now fully integrated into the braiNIX source tree.
 To edit the command's behavior (but not the name of the command itself), just
-change `command_x.bf` and leave the rest of the code intact.
+change `x.bf` and leave the rest of the code intact.
 
 Guidelines
 ----------

@@ -15,7 +15,7 @@ be the world's smallest operating system.
 
 ### Commands
 
-braiNIX currently supports the following basic UNIX commands:
+braiNIX currently supports the following basic \*NIX commands:
 
 `clear` `du` `echo` `exit` `logout` `pwd` `whoami`
 

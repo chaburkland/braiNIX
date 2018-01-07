@@ -1,7 +1,7 @@
 [
-    (subtract_space)
+    (subtract/space)
     [
-        (add_space)
+        (add/space)
         >>
     ]
     <

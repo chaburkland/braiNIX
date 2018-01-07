@@ -86,7 +86,7 @@ def filter_commands(build):
 def replace_sources(build):
     """Replace all {bracketed sources} in build with their source code."""
 
-    files = re.findall("\((\w+)\)", build)
+    files = re.findall("\(([\w/]+)\)", build)
 
     if not files:
         return build

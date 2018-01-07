@@ -1,10 +1,10 @@
 [
-    (subtract_newline)
+    (subtract/newline)
     [
-        (add_newline)
+        (add/newline)
         .
         >
-        (subtract_newline)
+        (subtract/newline)
     ]
 ]
-(add_newline)
+(add/newline)

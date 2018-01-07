@@ -1,0 +1,17 @@
++
+>
+(subtract/e)
+[
+    (add/e)
+    <
+    -
+]
+<
+[
+    -
+    >
+    (decode/ec)
+    (decode/ex)
+    <
+]
+>

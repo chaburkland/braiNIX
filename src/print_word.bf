@@ -1,10 +1,10 @@
 [
-    (subtract_space)
+    (subtract/space)
     [
-        (add_space)
+        (add/space)
         .
         >
-        (subtract_space)
+        (subtract/space)
     ]
 ]
-(add_space)
+(add/space)

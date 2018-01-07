@@ -1,0 +1,16 @@
++
+>
+(subtract/u)
+[
+    (add/u)
+    <
+    -
+]
+<
+[
+    -
+    >
+    (decode/du_command)
+    <
+]
+>

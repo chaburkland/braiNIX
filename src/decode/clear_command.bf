@@ -1,0 +1,17 @@
++
+>
+(subtract/space)
+[
+    (add/space)
+    <
+    -
+]
+<
+[
+    -
+    >
+    (command/clear)
+    (clear_cell_down)
+    <
+]
+>

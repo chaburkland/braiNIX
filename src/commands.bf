@@ -1,11 +1,11 @@
 [
     <
-    (decode_d)
-    (decode_c)
-    (decode_l)
-    (decode_w)
-    (decode_p)
-    (decode_e)
+    (decode/d)
+    (decode/c)
+    (decode/l)
+    (decode/w)
+    (decode/p)
+    (decode/e)
     >
-    (command_not_found)
+    (command/not_found)
 ]

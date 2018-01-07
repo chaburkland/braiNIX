@@ -1,0 +1,16 @@
++
+>
+(subtract/t)
+[
+    (add/t)
+    <
+    -
+]
+<
+[
+    -
+    >
+    (decode/logout_command)
+    <
+]
+>

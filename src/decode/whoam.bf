@@ -1,0 +1,16 @@
++
+>
+(subtract/m)
+[
+    (add/m)
+    <
+    -
+]
+<
+[
+    -
+    >
+    (decode/whoami)
+    <
+]
+>
