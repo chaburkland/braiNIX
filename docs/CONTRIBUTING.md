@@ -126,13 +126,93 @@ Guidelines
 
 ### Design
 
+The following ordered principles should guide any implementation choices during
+development.
+
 #### 1. Familiarity
 
-#### 2. Stability
+The sole goal of braiNIX is to duplicate the feature sets of existing systems.
+Don't create new features; clone existing ones.
 
-#### 3. Speed
+#### 2. Speed
 
-#### 4. Compatibility
+Software development isn't code golf. Speed is a far more important metric to
+optimize for than source code length. It is important to remember that
+unnecessary loops and address shifts add considerable overhead and complexity
+(not to mention tedious memory-management challenges for the programmer),
+especially for the hardware-interpreting designs that braiNIX is specifically
+designed for.
+
+Consider setting a zeroed cell to `127`:
+
+```bf
+Multiplication
+==============
+
+>
+++
+>
++
+>
++
+[
+    +
+    >
+    +
+    [
+        -
+        <
+        ++++
+        >
+    ]
+    <<
+]
+>
+
+Total operations: 342 (stack-based looping) or 676 (parsed looping)
+Nested loops: 2
+Total size: 24
+Cells used: 5
+```
+
+versus
+
+```bf
+Addition
+========
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++
+
+Total operations: 127
+Nested loops: 0
+Total size: 127
+Cells used: 1
+```
+
+For an extra 0.1 KB of program memory, the second option is 2.7x - 5.3x faster,
+doesn't add any nested loops, and is 5x more memory-efficient.
+
+Don't add by multiplying. Add by adding.
+
+#### 3. Compatibility
+
+Never reduce the potential user base just to make the code easier to write. The
+minimum requirements for braiNIX are defined by what's realistically possible,
+not by what interpreter designs are easy to ignore.
+
+Consider the example above. While a subtraction option (127 minus signs) is just
+as fast and complex as addition, it would make braiNIX incompatible with any
+interpreters that have cell sizes greater than 8 bits.
+
+#### 4. Maintainability
+
+Again, consider the speed comparison above. The addition is much easier to
+understand, debug, modify, integrate, and optimize than the multiplication.
+
+#### 5. Stability
+
+Design it to work well, and keep it working well. It's as simple as that.
 
 ### Style
 
@@ -145,7 +225,26 @@ the generally accepted standards found in:
 - [PEP 257]
 - [The Google Python Style Guide]
 
+All `.bf` source files should adhere to the following conventions:
+
+- Wrap lines at 80 characters.
+- Indent 4 spaces for nested loops.
+- Separate strings of identical commands on their own line.
+- Leave one-command loops intact, together on their own line.
+
 #### Documentation
+
+All documentation should be written in Markdown, for consistency. It should
+adhere to the following conventions:
+
+- Never use any profanity, even when referring to the source language.
+- All links and images should be reference-style.
+- Any code, directories, files, file extensions, cell addresses, cell values, or
+  variables should be `code-highlighted`.
+- Use underlining for level-two and level-two headings. All file references
+  should be relative.
+- Indent properly when wrapping lines for lists.
+- Always write in the third person, passive voice.
 
 [the syntax and behavior of `.bf` files]:
 https://en.wikipedia.org/wiki/brainfuck
