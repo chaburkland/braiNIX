@@ -10,8 +10,7 @@
 [
     -
     >
-    (decode_ec)
-    (decode_ex)
+    (decode_clea)
     <
 ]
 >

@@ -13,6 +13,22 @@ The first of its kind, braiNIX is a project to develop a \*NIX OS written
 entirely in [an esoteric Turing language]. When fully functional, it will likely
 be the world's smallest operating system.
 
+### Commands
+
+braiNIX currently supports the following basic UNIX commands:
+
+`clear` `du` `echo` `exit` `logout` `pwd` `whoami`
+
+### File System
+
+A file system is currently under development.
+
+### Other Features
+
+No other features (arguments, options, quoting, substitution, redirection,
+chaining, etc...) are supported at this time.
+
+
 Requirements
 ------------
 

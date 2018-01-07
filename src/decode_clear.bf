@@ -1,0 +1,16 @@
++
+>
+(subtract_r)
+[
+    (add_r)
+    <
+    -
+]
+<
+[
+    -
+    >
+    (decode_clear_command)
+    <
+]
+>

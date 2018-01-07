@@ -1,0 +1,16 @@
++
+>
+(subtract_h)
+[
+    (add_h)
+    <
+    -
+]
+<
+[
+    -
+    >
+    (decode_echo)
+    <
+]
+>

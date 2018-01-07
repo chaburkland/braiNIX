@@ -91,8 +91,8 @@ maintaining the source tree. There are two main additions:
   ```
 
 `brainix.bf` is where building begins. Any other source files used in braiNIX
-must either be referenced by `braiNIX.bf` or one of its decedents. Once all file
-references have been replaced, the build is finished.
+must either be referenced by `braiNIX.bf` or one of its descendants. Once all
+file references have been replaced, the build is finished.
 
 ### Building
 
@@ -109,7 +109,7 @@ Writing A Command
 braiNIX has been designed to make adding new commands very simple. To create a
 new command `x` (replacing `x` with the command name, like `echo` or `emacs`):
 
-1. Code the command in a file called `command_x.bf`, and place it in the `src/`
+1. Code the command in a file named `command_x.bf`, and place it in the `src/`
    directory. Make sure the command does not already exist (unless it is being
    updated, of course).
 
@@ -124,12 +124,28 @@ change `command_x.bf` and leave the rest of the code intact.
 Guidelines
 ----------
 
+### Design
+
+#### 1. Familiarity
+
+#### 2. Stability
+
+#### 3. Speed
+
+#### 4. Compatibility
+
+### Style
+
+#### Code
+
 All tooling should be written in Python 3.6, for consistency. It should follow
 the generally accepted standards found in:
 
 - [PEP 8]
 - [PEP 257]
 - [The Google Python Style Guide]
+
+#### Documentation
 
 [the syntax and behavior of `.bf` files]:
 https://en.wikipedia.org/wiki/brainfuck

@@ -1,5 +1,7 @@
 [
     <
+    (decode_d)
+    (decode_c)
     (decode_l)
     (decode_w)
     (decode_p)
