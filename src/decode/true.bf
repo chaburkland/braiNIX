@@ -10,8 +10,7 @@
 [
     -
     >
-    (decode/ex)
-    (decode/ec)
+    (decode/true_command)
     <
 ]
 >

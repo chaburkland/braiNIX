@@ -1,0 +1,9 @@
+[
+    (subtract/space)
+    [
+        (add/space)
+        <
+        (subtract/space)
+    ]
+]
+(add/space)

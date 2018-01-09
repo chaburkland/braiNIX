@@ -42,7 +42,8 @@ for index in range(len(command)):
     (decode/{command[:index + 2]})
     <
 ]
->""")
+>
+""")
 
         else:
 
@@ -62,7 +63,8 @@ for index in range(len(command)):
     (decode/{command}_command)
     <
 ]
->""")
+>
+""")
 
     else:
 
@@ -74,7 +76,7 @@ for index in range(len(command)):
             text = text.split('\n')
             text.insert(12, f"    (decode/{command[:index + 2]})")
 
-            with open(f"../src/decode_{command[:index + 1]}.bf", 'w') as file:
+            with open(f"../src/decode/{command[:index + 1]}.bf", 'w') as file:
                 file.write('\n'.join(text))
 
         else:
@@ -101,9 +103,7 @@ if f"(decode/{command[0]})" not in text:
 with open(f"../src/decode/{command}_command.bf", 'w') as file:
     file.write(f"""+
 >
-(subtract/space)
 [
-    (add/space)
     <
     -
 ]
@@ -115,6 +115,7 @@ with open(f"../src/decode/{command}_command.bf", 'w') as file:
     (clear_cell_down)
     <
 ]
->""")
+>
+""")
 
 print("\nIntegrated into source tree.\n")

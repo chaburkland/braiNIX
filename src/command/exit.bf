@@ -1,9 +1,9 @@
->
-(clear_struct_back)
+[-]
 -
-<
 (to_previous_anchor)
 >
+[-]
 +
 (to_next_anchor)
-+
+[+]
+(clear_next_args_back)

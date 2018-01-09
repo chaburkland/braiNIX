@@ -1,2 +1,2 @@
-(clear_struct_back)
 "root\n"
+(clear_next_args_back)

@@ -1,8 +1,6 @@
 +
 >
-(subtract/space)
 [
-    (add/space)
     <
     -
 ]

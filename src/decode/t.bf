@@ -1,8 +1,8 @@
 +
 >
-(subtract/p)
+(subtract/t)
 [
-    (add/p)
+    (add/t)
     <
     -
 ]
@@ -10,7 +10,7 @@
 [
     -
     >
-    (decode/pw)
+    (decode/tr)
     <
 ]
 >

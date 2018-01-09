@@ -1,3 +1,6 @@
+###### Development is not yet stable. This information may change at any time.
+---
+
 ![stable version]![stable build date]
 ![latest version]![latest build date]
 
@@ -17,7 +20,7 @@ be the world's smallest operating system.
 
 braiNIX currently supports the following basic \*NIX commands:
 
-`clear` `du` `echo` `exit` `logout` `pwd` `whoami`
+`clear` `du` `echo` `exit` `false` `logout` `pwd` `true` `whoami`
 
 ### File System
 
@@ -31,9 +34,6 @@ chaining, comments, etc...) are supported at this time.
 
 Requirements
 ------------
-
-_Development is currently in an unstable "0" phase. These requirements may
-change at any time._
 
 braiNIX is designed to run on most systems that support the execution of `.bf`
 files. These systems fall under two categories:

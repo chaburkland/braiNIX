@@ -1,15 +1,12 @@
-(clear_cell_down)
-(clear_previous_cell)
-(clear_previous_cell)
--
->>>
-(clear_spaces_forward)
+(drop_anchor)
+>
 [
-    (print_word)
-    (clear_previous_cell)
-    (clear_previous_cell)
-    >>
-    (clear_spaces_forward)
+    [
+        .
+        [-]
+        >
+    ]
+    >
     [
         <
         " "
@@ -17,11 +14,4 @@
     >
 ]
 "\n"
-<
-+
-[
-    (clear_cell_down)
-    <
-    +
-]
->
+(to_previous_anchor)

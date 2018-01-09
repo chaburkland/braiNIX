@@ -1,0 +1,11 @@
+(clear_cell_down)
+-
+>
+[-]
+>
+[
+    (clear_struct_forward)
+    >
+]
+(to_previous_anchor)
+[+]

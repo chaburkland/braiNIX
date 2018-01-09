@@ -2,12 +2,8 @@
     >>>
     "root@braiNIX:/# "
     (read_line)
-    (clear_next_cell)
-    (add/space)
-    (clear_next_cell)
-    <
-    (to_struct_start)
-    (clear_spaces_forward)
+    (to_previous_anchor)
+    >>>
     (commands)
     (to_previous_anchor)
     (check_exit)

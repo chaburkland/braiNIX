@@ -1,8 +1,6 @@
 +
 >
-(subtract/p)
 [
-    (add/p)
     <
     -
 ]
@@ -10,7 +8,8 @@
 [
     -
     >
-    (decode/pw)
+    (command/true)
+    (clear_cell_down)
     <
 ]
 >
