@@ -40,13 +40,12 @@ clarity and consistency:
 
 During normal operation, braiNIX allocates memory according to this diagram:
 
-|**Address**|`#0`    |`#1` |...|`#(d + 1)`|`#(d + 2)`|`#(d + 3)`|...|`#(m - 1)`|
-|:---------:|:------:|:---:|:-:|:--------:|:--------:|:--------:|:-:|:--------:|
-|**Type**   |Divider |Disk |...|Divider   |Anchor    |RAM       |...|Divider   |
+|**Cell**|`#0`    |`#1` |...|`#(d + 1)`|`#(d + 2)`|`#(d + 3)`|...|
+|:------:|:------:|:---:|:-:|:--------:|:--------:|:--------:|:-:|
+|**Type**|Divider |Disk |...|Divider   |Anchor    |RAM       |...|
 
-Here, `d` is the total size of `data` (in cells), and `m` is the total size of
-the system's memory (in cells). The disk cells (`#1` through `#d`) are only used
-if `data` exists.
+Here, `d` is the total size of `data` (in cells). The disk cells (`#1` through
+`#d`) are only used if `data` exists.
 
 The Source Tree
 ---------------
@@ -91,7 +90,7 @@ maintaining the source tree. There are two main additions:
   ```
 
 `brainix.bf` is where building begins. Any other source files used in braiNIX
-must either be referenced by `braiNIX.bf` or one of its descendants. Once all
+must either be referenced by `brainix.bf` or one of its descendants. Once all
 file references have been replaced, the build is finished.
 
 ### Building
@@ -109,9 +108,10 @@ Writing A Command
 Writing a command is an easy way to contribute to braiNIX. While anyone can help
 contribute to system-level changes (file system, execution loop, command
 detection, etc.), these are usually highly coordinated, involve many moving
-parts, often affect all commands, and require a deeper knowledge of how braiNIX
-works at a command-by-command level. Cloning a UNIX command, on the other hand,
-is as simple as coding some specific behavior and running an integration script.
+parts, often affect all commands (and tools), and require a deeper knowledge of
+how braiNIX works at a command-by-command level. Cloning a UNIX command, on the
+other hand, is as simple as coding some specific behavior and running an
+integration script.
 
 With that said, system-level contributions are always welcome, as are
 contributions to documentation, tooling, or tests!
@@ -121,26 +121,26 @@ contributions to documentation, tooling, or tests!
 #### How To Start
 
 The command script will begin execution at an unknown location in RAM on a
-zeroed cell, with all characters typed by the user following the command located
-immediately to the right. Additionally, one space will have been added to the
-end of this argument string (including any trailing spaces that are already
-present).
-
-Here is an example command entered by the user. Note the two spaces between `A`
-and `B`. There are no spaces after `C`.
+zeroed cell, with divider-separated arguments located immediately to the right.
+Here is a (sloppy) example command entered by the user:
 
 ```bash
-mycommand A  B C     
+mycommand A    'B '  \
+   "C 'D  
+" # These lines are continued.
 ```
 
-This is what the tape would look like immediately upon execution of
-`command/mycommand.bf`. For simplicity, the initial tape head location will be
-called `#0`.
+This is what the memory would look like immediately upon execution of
+`command/mycommand.bf`. For simplicity, the initial cell address will be called
+`#0`.
 
-|**Address**  |`#0`|`#1`|`#2`   |`#3`   |`#4`|`#5`   |`#6`|`#7`   |`#8`|...|
-|:-----------:|:--:|:--:|:-----:|:-----:|:--:|:-----:|:--:|:-----:|:--:|:-:|
-|**Value**    |`0` |`65`|`32`   |`32`   |`66`|`32`   |`67`|`32`   |`0` |...|
-|**Character**|    |A   |(space)|(space)|B   |(space)|C   |(space)|    |...|
+|**Cell** |`#0`|`#1`|`#2`|`#3`|`#4` |`#5`|`#6`|`#7` |`#8`|`#9`|`#10`|`#11`|...|
+|:-------:|:--:|:--:|:--:|:--:|:---:|:--:|:--:|:---:|:--:|:--:|:---:|:---:|:-:|
+|**Value**|`0` |`65`|0   |`66`|`32` |`0` |`67`|32   |`39`|`68`|`10` |`0`  |...|
+|**ASCII**|    |A   |    |B   |space|    |C   |space|'   |D   |\n   |0    |...|
+
+Command text is automatically parsed and formated by braiNIX as the user types.
+Comments, spaces, quotes, and escapes are all automatically handled!
 
 #### How To Finish
 
@@ -290,6 +290,7 @@ All documentation should be written in Markdown, for consistency. It should
 adhere to the following conventions:
 
 - Never use any profanity, even when referring to the source language.
+- Wrap lines at 80 characters.
 - All links and images should be reference-style.
 - Any code, directories, files, file extensions, cell addresses, cell values, or
   variables should be `code-highlighted`.

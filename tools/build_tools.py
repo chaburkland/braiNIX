@@ -5,10 +5,10 @@ import re
 
 
 build_report = """
+{}
+
 Name: {}
 Size: {} KB
-
-{}
 
 Saved to builds.
 """
@@ -112,7 +112,7 @@ def report(build):
     version = input("\nVersion: v")
     size = round(len(build) / 1024, 3)
     name = f"brainix_v{version}+{int(size) + 1}.{depth}.{cells}.bf"
-    print(build_report.format(name, size, build))
+    print(build_report.format(build, name, size))
 
     return name
 

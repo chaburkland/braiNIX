@@ -1,8 +1,7 @@
-###### Development is not yet stable. This information may change at any time.
----
-
-![stable version]![stable build date]
-![latest version]![latest build date]
+[![stable version]![stable build date]](
+https://github.com/brandtbucher/braiNIX/releases/latest)
+[![latest version]![latest build date]](
+https://github.com/brandtbucher/braiNIX/releases)
 
 `braiNIX`
 =========
@@ -28,9 +27,10 @@ A file system is currently under development.
 
 ### Other Features
 
-No other features (arguments, options, quoting, substitution, redirection,
-chaining, comments, etc...) are supported at this time.
-
+braiNIX supports some advanced input features, such as escape slashes, single-
+and double-quoting, and inline commenting for commands and their arguments. No
+other features (command options, substitution, redirection, chaining, etc...)
+are currently supported.
 
 Requirements
 ------------
