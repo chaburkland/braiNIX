@@ -14,20 +14,65 @@
         (subtract/space)
         [
             (add/space)
-            NOT NEWLINE OR SPACE
+            NOT NEWLINE / SPACE
             (subtract/single_quote)
             [
                 (add/single_quote)
-                NOT NEWLINE OR SPACE OR SINGLE QUOTE
+                NOT NEWLINE / SPACE / SINGLE QUOTE
                 (subtract/double_quote)
                 [
                     (add/double_quote)
-                    NOT NEWLINE OR SPACE OR SINGLE QUOTE OR DOUBLE QUOTE
+                    NOT NEWLINE / SPACE / QUOTE
+                    (subtract/slash)
+                    [
+                        (add/slash)
+                        NOT NEWLINE / SPACE / QUOTE / HASH
+                        (subtract/hash)
+                        [
+                            (add/hash)
+                            NOT NEWLINE / SPACE / QUOTE / SLASH / HASH =========
+                            >
+                            ,
+                            .
+                            NOT NEWLINE / SPACE / QUOTE / SLASH / HASH =========
+                            >
+                        ]
+                        >
+                        [
+                            -
+                            <
+                            HASH ===============================================
+                            ,
+                            .
+                            (subtract/newline)
+                            [
+                                ,
+                                .
+                                (subtract/newline)
+                            ]
+                            HASH ===============================================
+                            >>
+                        ]
+                        <
+                    ]
                     >
-                    ,
-                    .
-                    NOT NEWLINE OR SPACE OR SINGLE QUOTE OR DOUBLE QUOTE
-                    >
+                    [
+                        -
+                        <
+                        SLASH ==================================================
+                        ,
+                        .
+                        (subtract/newline)
+                        [
+                            (add/newline)
+                            >
+                        ]
+                        ,
+                        .
+                        SLASH ==================================================
+                        >>
+                    ]
+                    <
                 ]
                 >
                 [
@@ -93,9 +138,8 @@
         -
         <
         NEWLINE ================================================================
-        >
         NEWLINE ================================================================
-        >
+        >>
     ]
     <<
 ]
