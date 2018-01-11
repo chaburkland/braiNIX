@@ -21,6 +21,9 @@ braiNIX currently supports the following basic \*NIX commands:
 
 `clear` `du` `echo` `exit` `false` `logout` `pwd` `true` `whoami`
 
+In addition to these, braiNIX also features a new command: `bf`. This powerful
+program is used to execute `.bf` code entered by the user at runtime.
+
 ### File System
 
 A file system is currently under development.

@@ -1,5 +1,6 @@
 [
     <
+    (decode/b)
     (decode/w)
     (decode/t)
     (decode/p)
