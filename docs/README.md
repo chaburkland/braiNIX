@@ -63,8 +63,8 @@ unsigned designs are supported, as are finite and infinite designs.
 halting behavior is recommended to avoid errant memory corruption. Both finite
 and infinite designs are supported.
 
-- Input must be recieved via an unbuffered blocking input byte stream. As a
-result, `EOF` behavior may be left undefined. Input should not be automatically
+- Input must be recieved via an unbuffered input byte stream. `EOF / NULL`
+behavior may be `0`, `-1`, or no-change. Input should not be automatically
 echoed to the output stream. Both input and output streams should support the
 7-bit ASCII printable character set (code points `32` - `126`). Code point `10`
 (line feed), must also be supported.
@@ -98,11 +98,10 @@ Given a version number `vA.B.C+X.Y.Z`:
   ASCII characters to words as small as 3 bits, if desired.
 
 - `Y` is the loop depth of the final build. The runtime environment must support
-  at least this many nested loops to successfully boot braiNIX. More are usually
-  required for error-free execution.
+  at least this many nested loops to successfully boot braiNIX.
 
-- `Z` is the memory size of the final build. The runtime environment must have
-  at least this many memory cells to successfully boot braiNIX. More are usually
+- `Z` is the memory requirement of the final build. The runtime environment must
+  have at least this many memory cells to successfully boot braiNIX. More are
   required for error-free execution.
 
 --------------------------------------------------------------------------------

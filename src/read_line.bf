@@ -1,5 +1,4 @@
-,
-.
+(read_char)
 [
     >
     [-]
@@ -32,8 +31,7 @@
                             (add/hash)
                             NOT NEWLINE / SPACE / QUOTE / SLASH / HASH =========
                             >
-                            ,
-                            .
+                            (read_char)
                             NOT NEWLINE / SPACE / QUOTE / SLASH / HASH =========
                             >
                         ]
@@ -42,12 +40,10 @@
                             -
                             <
                             HASH ===============================================
-                            ,
-                            .
+                            (read_char)
                             (subtract/newline)
                             [
-                                ,
-                                .
+                                (read_char)
                                 (subtract/newline)
                             ]
                             HASH ===============================================
@@ -60,15 +56,13 @@
                         -
                         <
                         SLASH ==================================================
-                        ,
-                        .
+                        (read_char)
                         (subtract/newline)
                         [
                             (add/newline)
                             >
                         ]
-                        ,
-                        .
+                        (read_char)
                         SLASH ==================================================
                         >>
                     ]
@@ -79,18 +73,15 @@
                     -
                     <
                     DOUBLE QUOTE ===============================================
-                    ,
-                    .
+                    (read_char)
                     (subtract/double_quote)
                     [
                         (add/double_quote)
                         >
-                        ,
-                        .
+                        (read_char)
                         (subtract/double_quote)
                     ]
-                    ,
-                    .
+                    (read_char)
                     DOUBLE QUOTE ===============================================
                     >>
                 ]
@@ -101,18 +92,15 @@
                 -
                 <
                 SINGLE QUOTE ===================================================
-                ,
-                .
+                (read_char)
                 (subtract/single_quote)
                 [
                     (add/single_quote)
                     >
-                    ,
-                    .
+                    (read_char)
                     (subtract/single_quote)
                 ]
-                ,
-                .
+                (read_char)
                 SINGLE QUOTE ===================================================
                 >>
             ]
@@ -126,8 +114,7 @@
             <
             [>]
             >
-            ,
-            .
+            (read_char)
             SPACE ==============================================================
             >>
         ]
