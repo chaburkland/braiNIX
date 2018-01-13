@@ -63,7 +63,7 @@ unsigned designs are supported, as are finite and infinite designs.
 halting behavior is recommended to avoid errant memory corruption. Both finite
 and infinite designs are supported.
 
-- Input must be recieved via an unbuffered input byte stream. `EOF / NULL`
+- Input must be recieved via an unbuffered input byte stream. `EOF` / `NULL`
 behavior may be `0`, `-1`, or no-change. Input should not be automatically
 echoed to the output stream. Both input and output streams should support the
 7-bit ASCII printable character set (code points `32` - `126`). Code point `10`

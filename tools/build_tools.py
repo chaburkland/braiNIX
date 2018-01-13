@@ -1,6 +1,7 @@
 """Define functions used by build.py."""
 
 
+import beef
 import re
 
 
@@ -16,61 +17,9 @@ Saved to builds.
 
 def cell_usage(build):
 
-    cells = [0]
-    index = 0
-    head = 0
+    report = beef.run(build)
 
-    while index < len(build):
-        if build[index] is '+':
-            cells[head] += 1
-            if 256 <= cells[head]:
-                cells[head] -= 256
-        elif build[index] is ',':
-            break
-        elif build[index] is '-':
-            cells[head] -= 1
-            if cells[head] < 0:
-                cells[head] += 256
-        elif build[index] is '.':
-            pass
-        elif build[index] is '<':
-            head -= 1
-            if head < 0:
-                cells.insert(0, 0)
-                head = 0
-        elif build[index] is '>':
-            head += 1
-            while len(cells) <= head:
-                cells.append(0)
-        elif build[index] is '[':
-            if not cells[head]:
-                loops = 1
-                while True:
-                    index += 1
-                    if build[index] is '[':
-                        loops += 1
-                    elif build[index] is ']':
-                        loops -= 1
-                        if not loops:
-                            break
-                    if len(build) <= index:
-                        break
-        elif build[index] is ']':
-            if cells[head]:
-                loops = 1
-                while True:
-                    index -= 1
-                    if build[index] is '[':
-                        loops -= 1
-                        if not loops:
-                            break
-                    elif build[index] is ']':
-                        loops += 1
-                    if len(build) <= index:
-                        break
-        index += 1
-
-    return len(cells)
+    return len(report[2])
 
 
 def filter_commands(build):

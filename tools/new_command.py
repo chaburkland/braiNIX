@@ -1,21 +1,11 @@
-"""References provided command in source tree at ../src/."""
+"""References provided command (lowercase letters) in source tree at ../src/."""
 
-command = input("\nCommand: ").lower()
+command = [char for char in input("\nCommand: ").lower() if char.isalpha()]
+command = ''.join(command)
 
 for index in range(len(command)):
 
     char = command[index]
-    ascii = ord(char)
-    add = '+' * ascii
-    subtract = '-' * ascii
-
-    with open(f"../src/add/{char}.bf", 'w') as file:
-        for line in range(len(add) // 80 + 1):
-            file.writelines(add[80 * line: 80 * (line + 1)] + '\n')
-
-    with open(f"../src/subtract/{char}.bf", 'w') as file:
-        for line in range(len(subtract) // 80 + 1):
-            file.writelines(subtract[80 * line: 80 * (line + 1)] + '\n')
 
     try:
 
@@ -112,7 +102,7 @@ with open(f"../src/decode/{command}_command.bf", 'w') as file:
     -
     >
     (command/{command})
-    (clear_cell_down)
+    [-]]
     <
 ]
 >
