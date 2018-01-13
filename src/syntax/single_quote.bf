@@ -1,0 +1,12 @@
+(read_char)
+.
+(subtract/single_quote)
+[
+    (add/single_quote)
+    >
+    (read_char)
+    .
+    (subtract/single_quote)
+]
+(read_char)
+.

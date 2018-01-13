@@ -1,0 +1,15 @@
+(read_char)
+.
+(subtract/newline)
+[
+    (add/newline)
+    >
+    [-]
+]
+(read_char)
+.
+>
+[-]
+>
+[-]
+<<

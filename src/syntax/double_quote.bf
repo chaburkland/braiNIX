@@ -1,0 +1,34 @@
+(read_char)
+.
+(subtract/double_quote)
+[
+    (add/double_quote)
+    >
+    [-]
+    +
+    >
+    [-]
+    >
+    [-]
+    <<<
+    (subtract/slash)
+    [
+        (add/slash)
+        >
+        (read_char)
+        .
+        (subtract/double_quote)
+        >
+    ]
+    >
+    [
+        -
+        <
+        (syntax/slash)
+        (subtract/double_quote)
+        >>
+    ]
+    <<
+]
+(read_char)
+.
