@@ -1,9 +1,2 @@
-[-]
--
-(to_previous_anchor)
->
-[-]
-+
-(to_next_anchor)
-[+]
+(set_exit)
 (clear_next_args_back)

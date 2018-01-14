@@ -1,0 +1,38 @@
+[
+    >
+    [-]
+    +
+    >
+    [-]
+    <<
+    (subtract/space)
+    [
+        (add/space)
+        (subtract/newline)
+        [
+            >
+            [-]
+            <
+            (read_char)
+            .
+            >
+        ]
+        >
+        [
+            -
+            <
+            (add/newline)
+            >>>>
+        ]
+        <
+    ]
+    >
+    [
+        -
+        <
+        (add/space)
+        >>>>
+    ]
+    <<
+]
+<

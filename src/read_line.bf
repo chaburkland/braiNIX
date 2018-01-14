@@ -25,10 +25,22 @@
                         (subtract/hash)
                         [
                             (add/hash)
+                            (subtract/right)
+                            [
+                                (add/right)
+                                >
+                                (read_char)
+                                .
+                                >
+                            ]
                             >
-                            (read_char)
-                            .
-                            >
+                            [
+                                -
+                                <
+                                (syntax/right)
+                                >>
+                            ]
+                            <
                         ]
                         >
                         [
