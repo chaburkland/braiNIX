@@ -32,8 +32,8 @@ A file system is currently under development.
 
 braiNIX supports some advanced input features, such as escape slashes, single-
 and double-quoting, and inline commenting for commands and their arguments. No
-other features (command options, substitution, redirection, chaining, etc...)
-are currently supported.
+other features (command options, substitution, redirection, chaining, backspace
+/ other key combinations, etc...) are currently supported.
 
 Requirements
 ------------

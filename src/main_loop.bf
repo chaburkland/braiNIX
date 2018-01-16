@@ -8,5 +8,5 @@
     (to_previous_anchor)
     (check_flags)
 ]
-<
-(to_previous_struct_end)
+<<
+[<]

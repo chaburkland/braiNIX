@@ -7,27 +7,15 @@
     >
     [-]
     <<
-    (subtract/space)
+    (subtract/newline)
     [
-        (add/space)
-        (subtract/d)
+        (add/newline)
+        (subtract/space)
         [
-            (add/d)
-            (wait_for_break)
-            >
-            [-]
-        ]
-        >
-        [
-            <
-            (read_char)
-            .
-            >
-            +
-            <
-            (subtract/a)
+            (add/space)
+            (subtract/d)
             [
-                (add/a)
+                (add/d)
                 (wait_for_break)
                 >
                 [-]
@@ -40,9 +28,9 @@
                 >
                 +
                 <
-                (subtract/t)
+                (subtract/a)
                 [
-                    (add/t)
+                    (add/a)
                     (wait_for_break)
                     >
                     [-]
@@ -55,13 +43,12 @@
                     >
                     +
                     <
-                    (subtract/a)
+                    (subtract/t)
                     [
-                        (add/a)
+                        (add/t)
                         (wait_for_break)
                         >
-                        [-]
-                    ]
+                        [-]                    ]
                     >
                     [
                         <
@@ -70,45 +57,80 @@
                         >
                         +
                         <
-                        (subtract/space)
+                        (subtract/a)
                         [
-                            (add/space)
-                            (subtract/newline)
+                            (add/a)
+                            (wait_for_break)
+                            >
+                            [-]
+                        ]
+                        >
+                        [
+                            <
+                            (read_char)
+                            .
+                            >
+                            +
+                            <
+                            (subtract/space)
                             [
-                                (add/newline)
-                                (wait_for_break)
+                                (add/space)
+                                (subtract/newline)
+                                [
+                                    (add/newline)
+                                    (wait_for_break)
+                                    >
+                                    [-]
+                                ]
                                 >
-                                [-]
+                                [
+                                    (set_redirect_output)
+                                    <
+                                    (add/newline)
+                                    >>>
+                                ]
+                                <
                             ]
                             >
                             [
                                 (set_redirect_output)
                                 <
-                                (add/newline)
+                                (add/space)
                                 >>>
                             ]
-                            <
-                        ]
-                        >
-                        [
-                            (set_redirect_output)
-                            <
-                            (add/space)
-                            >>>
                         ]
                     ]
                 ]
             ]
+            <
+        ]
+        >
+        [
+            -
+            <
+            (read_char)
+            .
+            >>
         ]
         <
     ]
     >
     [
+        "syntax error near unexpected token 'newline'\n"
         -
         <
-        (read_char)
-        .
-        >>
+        +
+        [
+            [-]
+            <
+            +
+        ]
+        -
+        (to_next_anchor)
+        +
+        <
+        (add/newline)
+        >>>
     ]
     <<
 ]
