@@ -48,7 +48,8 @@
                         (add/t)
                         (wait_for_break)
                         >
-                        [-]                    ]
+                        [-]
+                    ]
                     >
                     [
                         <

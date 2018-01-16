@@ -7,27 +7,27 @@
     >
     [-]
     <<
-    (subtract/newline)
+    (subtract/right)
     [
-        (add/newline)
-        (subtract/space)
+        (add/right)
+        (subtract/double_quote)
         [
-            (add/space)
+            (add/double_quote)
             (subtract/single_quote)
             [
                 (add/single_quote)
-                (subtract/double_quote)
+                (subtract/hash)
                 [
-                    (add/double_quote)
+                    (add/hash)
                     (subtract/slash)
                     [
                         (add/slash)
-                        (subtract/hash)
+                        (subtract/space)
                         [
-                            (add/hash)
-                            (subtract/right)
+                            (add/space)
+                            (subtract/newline)
                             [
-                                (add/right)
+                                (add/newline)
                                 >
                                 (read_char)
                                 .
@@ -37,7 +37,7 @@
                             [
                                 -
                                 <
-                                (syntax/right)
+                                (syntax/newline)
                                 >>
                             ]
                             <
@@ -46,7 +46,7 @@
                         [
                             -
                             <
-                            (syntax/hash)
+                            (syntax/space)
                             >>
                         ]
                         <
@@ -64,7 +64,7 @@
                 [
                     -
                     <
-                    (syntax/double_quote)
+                    (syntax/hash)
                     >>
                 ]
                 <
@@ -82,7 +82,7 @@
         [
             -
             <
-            (syntax/space)
+            (syntax/double_quote)
             >>
         ]
         <
@@ -91,7 +91,7 @@
     [
         -
         <
-        (syntax/newline)
+        (syntax/right) 15
         >>
     ]
     <<
